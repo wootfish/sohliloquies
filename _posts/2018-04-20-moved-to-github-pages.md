@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Moved to GitHub Pages!
+title: 'Moved to GitHub Pages!'
 date: '2017-04-20T01:00:00.000-08:00'
 author: Eli Sohl
 ---
