@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "{{ site.theme }}";
+
 section {
     width:700px;
 }
@@ -8,5 +10,3 @@ section {
 .wrapper {
     width:1060px;
 }
-
-@import "{{ site.theme }}";
