@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: Sohliloquies
 description: I'm a recent WWU grad working as a security developer. In my free time I read a lot and work on a range of projects, some of which find their way here. I'm interested in computer security, cryptography, Python, math, language, hard problems with simple answers, and systems that uphold their users' values.
+excerpt_separator: <!--break-->
