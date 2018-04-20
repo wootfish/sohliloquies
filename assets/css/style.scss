@@ -1,7 +1,12 @@
 ---
 ---
 
-@import "{{ site.theme }}";
 section {
-    width:1000px;
+    width:700px;
 }
+
+.wrapper {
+    width:1060px;
+}
+
+@import "{{ site.theme }}";
