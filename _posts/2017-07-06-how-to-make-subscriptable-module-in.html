@@ -9,4 +9,145 @@ blogger_id: tag:blogger.com,1999:blog-4261047698100656327.post-51417705409557227
 blogger_orig_url: http://sohliloquies.blogspot.com/2017/07/how-to-make-subscriptable-module-in.html
 ---
 
-<i>This might not be a good idea -- but it is a cool one.</i><br /><br /><br />Say you've got a Python dictionary with some data in it. There are two ways (well, two simple ways) to access its contents: via subscripting, or via a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> method.<br /><div class="highlight"><pre><br /><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'pears'</span><span class="p">:</span> <span class="s1">'good'</span><span class="p">,</span> <span class="s1">'peaches'</span><span class="p">:</span> <span class="s1">'meh'</span><span class="p">,</span> <span class="s1">'kumquats'</span><span class="p">:</span> <span class="s1">'yes please'</span><span class="p">}</span><br /><span class="n">d</span><span class="p">[</span><span class="s1">'kumquats'</span><span class="p">]</span> <span class="c1"># subscripting</span><br /><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'pears'</span><span class="p">) <span class="c1"># .get</span></span><br /></pre></div><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">d.get(k)</span> defaults to <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">None</span> if a key is not found, whereas <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">d[k]</span> throws a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">KeyError</span>. When the key is present, though, these two ways of getting data are more or less equivalent.<br /><br />The same goes for nested dictionaries:<br /><div class="highlight"><pre><br /><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><br />    <span class="s1">'eggs'</span><span class="p">:</span> <span class="p">{</span><br />        <span class="s1">'breakfast'</span><span class="p">:</span> <span class="s1">'maybe'</span><span class="p">,</span><br />        <span class="s1">'lunch'</span><span class="p">:</span> <span class="s1">'i guess'</span><span class="p">,</span><br />        <span class="s1">'dinner'</span><span class="p">:</span> <span class="s1">'nah'</span><br />    <span class="p">},</span><br />    <span class="s1">'sausage'</span><span class="p">:</span> <span class="p">{</span><br />        <span class="s1">'breakfast'</span><span class="p">:</span> <span class="s1">'deffo'</span><span class="p">,</span><br />        <span class="s1">'lunch'</span><span class="p">:</span> <span class="s1">'yee'</span><span class="p">,</span><br />        <span class="s1">'dinner'</span><span class="p">:</span> <span class="s1">'why not'</span><br />    <span class="p">},</span><br />    <span class="s1">'sushi'</span><span class="p">:</span> <span class="p">{</span><br />        <span class="s1">'breakfast'</span><span class="p">:</span> <span class="s1">'wtf'</span><span class="p">,</span><br />        <span class="s1">'lunch'</span><span class="p">:</span> <span class="s1">'erryday'</span><span class="p">,</span><br />        <span class="s1">'dinner'</span><span class="p">:</span> <span class="s1">'sometimes'</span><br />    <span class="p">}</span><br /><span class="p">}</span><br /><span class="n">d</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'lunch'</span><span class="p">]</span> <span class="c1"># this works</span><br /><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'sushi'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'breakfast'</span><span class="p">)</span> <span class="c1"># so does this</span><br /><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'sausage'</span><span class="p">)[</span><span class="s1">'breakfast'</span><span class="p">]</span> <span class="c1"># this too -- but it's mega ugly</span><br /></pre></div><br />The particularly astute reader might already have sense of where this is going.<br /><br />I'm writing a module to manage and expose a JSON config file to a Python app, and internally it represents the config using native Python data types. To the rest of the world, access is mediated via a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> call:<br /><div class="highlight"><pre><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span><br />    <span class="o">...</span> <span class="c1"># load config file data, etc</span><br /><br />    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span><br />        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><br /><br /><span class="c1"># config query singleton -- prevents unnecessarily re-reading conf file</span><br /><span class="n">_config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span><br /><span class="n">get</span> <span class="o">=</span> <span class="n">_config</span><span class="o">.</span><span class="n">get</span><br /></pre></div><br />The idea is that other code, after <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">import config</span>, can call <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">config.get</span> and interface with the module similarly to how you'd deal with a plain dictionary. But here's the catch: the config data includes nested dictionaries. Accessing these would involve either chaining <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> calls or mixing <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> and subscript notation -- either of which would lead to ugly code.<br /><br />What to do? There are a couple options here.<br /><br />The simple, easy option would be to find a different way of exposing the config file.<br /><br />The other option would be to find a way to make the entire module subscriptable, and to make subscripting it return the correct results.<br /><br />I'm not really opposed to either option, but I know which one sounds more fun.<br /><br />Internally, Python handles subscripting by calling an instance's <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> method. But just defining a function named <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> at module level won't work:<br /><div class="highlight"><pre>user@development:/tmp/tests$ cat a.py <br />import random<br /><br />def __getitem__<span class="o">(</span>self, key<span class="o">)</span>:<br />    <span class="k">return</span> random.choice<span class="o">((</span><span class="s2">"o shit lol"</span>, <span class="s2">"whaa"</span>, <span class="s2">"no way"</span>, <span class="s2">"lmfao"</span><span class="o">))</span><br /><br />user@development:/tmp/tests$ cat b.py <br />import a<br /><br /><span class="k">for</span> _ in range<span class="o">(</span><span class="m">10</span><span class="o">)</span>:<br />    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br /><br />user@development:/tmp/tests$ python3 b.py <br />Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:<br />  File <span class="s2">"b.py"</span>, line <span class="m">4</span>, in &lt;module&gt;<br />    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br />TypeError: <span class="s1">'module'</span> object is not subscriptable<br /></pre></div><br />What's going wrong here? That's a simple question with a hard answer. The answer also varies somewhat depending on how far into the weeds of Python's object-oriented internals we want to wade. A few explanations, tuned to varying comfort levels:<br /><br />Python doesn't make it easy for us to override 'magic' functions like <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> at the module level, for that way madness lies.<br /><br />Python wants <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> to be a bound method, not just a function.<br /><br />Specifically, <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> must be bound to the object whose scope it's in (i.e. this module), something that there's no real pretty way of doing from inside the module body.<br /><br />This last one explains why the following fails:<br /><div class="highlight"><pre>user@development:/tmp/tests$ cat a.py <br />import random<br /><br />class Foo<span class="o">()</span>:<br />    def __getitem__<span class="o">(</span>self, key<span class="o">)</span>:<br />        <span class="k">return</span> random.choice<span class="o">((</span><span class="s2">"o shit lol"</span>, <span class="s2">"whaa"</span>, <span class="s2">"no way"</span>, <span class="s2">"lmfao"</span><span class="o">))</span><br /><br /><span class="nv">_foo</span> <span class="o">=</span> Foo<span class="o">()</span><br /><span class="nv">__getitem__</span> <span class="o">=</span> _foo.__getitem__<br /><br />user@development:/tmp/tests$ cat b.py <br />import a<br /><br /><span class="k">for</span> _ in range<span class="o">(</span><span class="m">10</span><span class="o">)</span>:<br />    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br /><br />user@development:/tmp/tests$ python3 b.py <br />Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:<br />  File <span class="s2">"b.py"</span>, line <span class="m">4</span>, in &lt;module&gt;<br />    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br />TypeError: <span class="s1">'module'</span> object is not subscriptable<br /></pre></div><br />It's starting to look like our goal of making the module subscriptable would require some deep, dark wizardry, maybe even hooking on module import or something equally perverse. The good news is that we can contain the perversity to a reasonably small area. The solution is to have the module overwrite its own entry in the sys.modules registry, replacing itself with a tailor-made object possessing the desired bound method. Check it out:<br /><div class="highlight"><pre>user@development:/tmp/tests$ cat a.py <br />import random<br />import sys<br />import types<br /><br />class Foo<span class="o">(</span>types.ModuleType<span class="o">)</span>:<br />    def __getitem__<span class="o">(</span>self, key<span class="o">)</span>:<br />        <span class="k">return</span> random.choice<span class="o">((</span><span class="s2">"o shit lol"</span>, <span class="s2">"whaa"</span>, <span class="s2">"no way"</span>, <span class="s2">"lmfao"</span><span class="o">))</span><br /><br />sys.modules<span class="o">[</span>__name__<span class="o">]</span> <span class="o">=</span> Foo<span class="o">(</span><span class="s2">"a"</span><span class="o">)</span><br /><br />user@development:/tmp/tests$ cat b.py <br />import a<br /><br /><span class="k">for</span> _ in range<span class="o">(</span><span class="m">10</span><span class="o">)</span>:<br />    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br /><br />user@development:/tmp/tests$ python3 b.py <br />no way<br />lmfao<br />no way<br />o shit lol<br />no way<br />whaa<br />o shit lol<br />whaa<br />whaa<br />o shit lol<br /></pre></div><br />And there you have it! We use <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__name__</span> to guarantee we're indexing into sys.modules at the right place. We pass the name of the module ("a") to the object constructor, which was inherited from <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">types.ModuleType</span> and expects a module name.<br /><br />So there you have it: that's how to make a module subscriptable. Similar tricks would probably work for making a module e.g. callable, or really giving it any combination of properties implemented through <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__magic__</span> functions.<br /><br />The more you know.
+<i>This might not be a good idea -- but it is a fun one.</i><br />
+<br />
+<br />
+Say you've got a Python dictionary with some data in it. There are two ways (well, two simple ways) to access its contents: via subscripting, or via a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> method.<br />
+<div class="highlight"><pre><br />
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'pears'</span><span class="p">:</span> <span class="s1">'good'</span><span class="p">,</span> <span class="s1">'peaches'</span><span class="p">:</span> <span class="s1">'meh'</span><span class="p">,</span> <span class="s1">'kumquats'</span><span class="p">:</span> <span class="s1">'yes please'</span><span class="p">}</span><br />
+<span class="n">d</span><span class="p">[</span><span class="s1">'kumquats'</span><span class="p">]</span> <span class="c1"># subscripting</span><br />
+<span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'pears'</span><span class="p">) <span class="c1"># .get</span></span><br />
+</pre></div><br />
+<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">d.get(k)</span> defaults to <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">None</span> if a key is not found, whereas <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">d[k]</span> throws a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">KeyError</span>. When the key is present, though, these two ways of getting data are more or less equivalent.<br />
+<br />
+The same goes for nested dictionaries:<br />
+<div class="highlight"><pre><br />
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><br />
+    <span class="s1">'eggs'</span><span class="p">:</span> <span class="p">{</span><br />
+        <span class="s1">'breakfast'</span><span class="p">:</span> <span class="s1">'maybe'</span><span class="p">,</span><br />
+        <span class="s1">'lunch'</span><span class="p">:</span> <span class="s1">'i guess'</span><span class="p">,</span><br />
+        <span class="s1">'dinner'</span><span class="p">:</span> <span class="s1">'nah'</span><br />
+    <span class="p">},</span><br />
+    <span class="s1">'sausage'</span><span class="p">:</span> <span class="p">{</span><br />
+        <span class="s1">'breakfast'</span><span class="p">:</span> <span class="s1">'deffo'</span><span class="p">,</span><br />
+        <span class="s1">'lunch'</span><span class="p">:</span> <span class="s1">'yee'</span><span class="p">,</span><br />
+        <span class="s1">'dinner'</span><span class="p">:</span> <span class="s1">'why not'</span><br />
+    <span class="p">},</span><br />
+    <span class="s1">'sushi'</span><span class="p">:</span> <span class="p">{</span><br />
+        <span class="s1">'breakfast'</span><span class="p">:</span> <span class="s1">'wtf'</span><span class="p">,</span><br />
+        <span class="s1">'lunch'</span><span class="p">:</span> <span class="s1">'erryday'</span><span class="p">,</span><br />
+        <span class="s1">'dinner'</span><span class="p">:</span> <span class="s1">'sometimes'</span><br />
+    <span class="p">}</span><br />
+<span class="p">}</span><br />
+<span class="n">d</span><span class="p">[</span><span class="s1">'eggs'</span><span class="p">][</span><span class="s1">'lunch'</span><span class="p">]</span> <span class="c1"># this works</span><br />
+<span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'sushi'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'breakfast'</span><span class="p">)</span> <span class="c1"># so does this</span><br />
+<span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'sausage'</span><span class="p">)[</span><span class="s1">'breakfast'</span><span class="p">]</span> <span class="c1"># this too -- but it's mega ugly</span><br />
+</pre></div><br />
+The particularly astute reader might already have sense of where this is going.<br />
+<!--break--><br />
+I'm writing a module to manage and expose a JSON config file to a Python app, and internally it represents the config using native Python data types. To the rest of the world, access is mediated via a <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> call:<br />
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Config</span><span class="p">:</span><br />
+    <span class="o">...</span> <span class="c1"># load config file data, etc</span><br />
+<br />
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span><br />
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><br />
+<br />
+<span class="c1"># config query singleton -- prevents unnecessarily re-reading conf file</span><br />
+<span class="n">_config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">()</span><br />
+<span class="n">get</span> <span class="o">=</span> <span class="n">_config</span><span class="o">.</span><span class="n">get</span><br />
+</pre></div><br />
+The idea is that other code, after <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">import config</span>, can call <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">config.get</span> and interface with the module similarly to how you'd deal with a plain dictionary. But here's the catch: the config data includes nested dictionaries. Accessing these would involve either chaining <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> calls or mixing <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">.get</span> and subscript notation -- either of which would lead to ugly code.<br />
+<br />
+What to do? There are a couple options here.<br />
+<br />
+The simple, easy option would be to find a different way of exposing the config file.<br />
+<br />
+The other option would be to find a way to make the entire module subscriptable, and to make subscripting it return the correct results.<br />
+<br />
+I'm not really opposed to either option, but I know which one sounds more fun.<br />
+<br />
+Internally, Python handles subscripting by calling an instance's <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> method. But just defining a function named <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> at module level won't work:<br />
+<div class="highlight"><pre>user@development:/tmp/tests$ cat a.py <br />
+import random<br />
+<br />
+def __getitem__<span class="o">(</span>self, key<span class="o">)</span>:<br />
+    <span class="k">return</span> random.choice<span class="o">((</span><span class="s2">"o shit lol"</span>, <span class="s2">"whaa"</span>, <span class="s2">"no way"</span>, <span class="s2">"lmfao"</span><span class="o">))</span><br />
+<br />
+user@development:/tmp/tests$ cat b.py <br />
+import a<br />
+<br />
+<span class="k">for</span> _ in range<span class="o">(</span><span class="m">10</span><span class="o">)</span>:<br />
+    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br />
+<br />
+user@development:/tmp/tests$ python3 b.py <br />
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:<br />
+  File <span class="s2">"b.py"</span>, line <span class="m">4</span>, in &lt;module&gt;<br />
+    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br />
+TypeError: <span class="s1">'module'</span> object is not subscriptable<br />
+</pre></div><br />
+What's going wrong here? That's a simple question with a hard answer. The answer also varies somewhat depending on how far into the weeds of Python's object-oriented internals we want to wade. A few explanations, tuned to varying comfort levels:<br />
+<br />
+Python doesn't make it easy for us to override 'magic' functions like <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> at the module level, for that way madness lies.<br />
+<br />
+Python wants <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> to be a bound method, not just a function.<br />
+<br />
+Specifically, <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__getitem__</span> must be bound to the object whose scope it's in (i.e. this module), something that there's no real pretty way of doing from inside the module body.<br />
+<br />
+This last one explains why the following fails:<br />
+<div class="highlight"><pre>user@development:/tmp/tests$ cat a.py <br />
+import random<br />
+<br />
+class Foo<span class="o">()</span>:<br />
+    def __getitem__<span class="o">(</span>self, key<span class="o">)</span>:<br />
+        <span class="k">return</span> random.choice<span class="o">((</span><span class="s2">"o shit lol"</span>, <span class="s2">"whaa"</span>, <span class="s2">"no way"</span>, <span class="s2">"lmfao"</span><span class="o">))</span><br />
+<br />
+<span class="nv">_foo</span> <span class="o">=</span> Foo<span class="o">()</span><br />
+<span class="nv">__getitem__</span> <span class="o">=</span> _foo.__getitem__<br />
+<br />
+user@development:/tmp/tests$ cat b.py <br />
+import a<br />
+<br />
+<span class="k">for</span> _ in range<span class="o">(</span><span class="m">10</span><span class="o">)</span>:<br />
+    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br />
+<br />
+user@development:/tmp/tests$ python3 b.py <br />
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:<br />
+  File <span class="s2">"b.py"</span>, line <span class="m">4</span>, in &lt;module&gt;<br />
+    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br />
+TypeError: <span class="s1">'module'</span> object is not subscriptable<br />
+</pre></div><br />
+It's starting to look like our goal of making the module subscriptable would require some deep, dark wizardry, maybe even hooking on module import or something equally perverse. The good news is that we can contain the perversity to a reasonably small area. The solution is to have the module overwrite its own entry in the sys.modules registry, replacing itself with a tailor-made object possessing the desired bound method. Check it out:<br />
+<div class="highlight"><pre>user@development:/tmp/tests$ cat a.py <br />
+import random<br />
+import sys<br />
+import types<br />
+<br />
+class Foo<span class="o">(</span>types.ModuleType<span class="o">)</span>:<br />
+    def __getitem__<span class="o">(</span>self, key<span class="o">)</span>:<br />
+        <span class="k">return</span> random.choice<span class="o">((</span><span class="s2">"o shit lol"</span>, <span class="s2">"whaa"</span>, <span class="s2">"no way"</span>, <span class="s2">"lmfao"</span><span class="o">))</span><br />
+<br />
+sys.modules<span class="o">[</span>__name__<span class="o">]</span> <span class="o">=</span> Foo<span class="o">(</span><span class="s2">"a"</span><span class="o">)</span><br />
+<br />
+user@development:/tmp/tests$ cat b.py <br />
+import a<br />
+<br />
+<span class="k">for</span> _ in range<span class="o">(</span><span class="m">10</span><span class="o">)</span>:<br />
+    print<span class="o">(</span>a<span class="o">[</span>_<span class="o">])</span><br />
+<br />
+user@development:/tmp/tests$ python3 b.py <br />
+no way<br />
+lmfao<br />
+no way<br />
+o shit lol<br />
+no way<br />
+whaa<br />
+o shit lol<br />
+whaa<br />
+whaa<br />
+o shit lol<br />
+</pre></div><br />
+And there you have it! We use <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__name__</span> to guarantee we're indexing into sys.modules at the right place. We pass the name of the module ("a") to the object constructor, which was inherited from <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">types.ModuleType</span> and expects a module name.<br />
+<br />
+So there you have it: that's how to make a module subscriptable. Similar tricks would probably work for making a module e.g. callable, or really giving it any combination of properties implemented through <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">__magic__</span> functions.<br />
+<br />
+The more you know.
