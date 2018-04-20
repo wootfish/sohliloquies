@@ -1,11 +1,10 @@
 ---
 layout: post
-title: 'Moved to GitHub Pages!'
-date: '2017-04-20T01:00:00.000-08:00'
-author: Eli Sohl
+title: Moved to GitHub Pages!
 ---
 
-I decided to migrate the blog to Github Pages.
+
+As you can tell if you're reading this post, I've decided to migrate my blog from Blogger to Github Pages.
 
 Blogger's web editing interface is a pain. Tweaking your blog's theme is a nightmare. I also dislike relying so heavily on a Google-hosted platform.
 
