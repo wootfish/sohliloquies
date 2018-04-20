@@ -13,9 +13,9 @@ blogger_orig_url: http://sohliloquies.blogspot.com/2015/02/as-some-of-you-have-r
 As some of you have requested, today we'll be talking about paper-and-pencil cryptography and how we can use computers to poke it full of holes!<br />
 <br />
 We're going to start with some background on basic (pre-digital) cryptography. Then, we're going to describe the specific cipher we're attacking here, along with some standard paper-and-pencil approaches to cracking it. Thirdly, we'll discuss one algorithmic approach powered by a dictionary file. Then, we'll look at some Python scripts implementing the discussed ideas. Two different scripts will be provided: A bare-bones one written to be simple to understand, and a batteries-included fancy one which elegantly implements the main logic using coroutines.<br />
-<br />
-<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-LONjg_CPT5I/VNF5oKCmRRI/AAAAAAAAAGk/2Heg4aIh5eo/s1600/screenshot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="247" src="https://2.bp.blogspot.com/-LONjg_CPT5I/VNF5oKCmRRI/AAAAAAAAAGk/2Heg4aIh5eo/s1600/screenshot.png" width="320" /></a></div><div style="text-align: center;">By the end of this post, we'll know what this script is doing and why it works.</div><br />
 <!--break--><br />
+<div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-LONjg_CPT5I/VNF5oKCmRRI/AAAAAAAAAGk/2Heg4aIh5eo/s1600/screenshot.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="247" src="https://2.bp.blogspot.com/-LONjg_CPT5I/VNF5oKCmRRI/AAAAAAAAAGk/2Heg4aIh5eo/s1600/screenshot.png" width="320" /></a></div><div style="text-align: center;">By the end of this post, we'll know what this script is doing and why it works.</div><br />
+<br />
 <br />
 <br />
 So -- first -- background! A substitution cipher is just what it sounds like: a cipher in which plaintext is turned into ciphertext by substituting, for each letter, a predetermined and different letter. A famous special case here is the Caesar cipher, where each letter is replaced by a letter three places after it:<br />

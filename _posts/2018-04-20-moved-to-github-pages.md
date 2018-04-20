@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Moved to GitHub Pages!
+nobreak: True
 ---
 
 
