@@ -1,44 +1,10 @@
-Say you want to take a website offline. Maybe you have a good reason, or maybe you don't.
-
-Most of the time, you'd be out of luck. After all, sites are served by servers, and servers are serious stuff. Taking down your target site means taking down its servers or cutting them off from the world. Neither option is particularly easy.
-
-As far as cutting someone off from the world, which amounts to attacking the infrastructure they use: Getting someone dropped from their hosting provider is only possible if you've got a pretty good reason. DNS hijacking is not what it once was. DDoS is expensive, and not nearly as potent as it used to be -- a couple months ago, GitHub survived a record-setting 1.35Tb/s DDoS with only a few minutes of downtime. Most other infrastructure attacks are no easier.
-
-As far as servers go, it's not easy to overload them, it's not easy to hack them, and usually it's not easy to get at them physically either.
-
-Given such a robust target, the most successful angle of attack people seem to have found is to make legal threats, with the hope of bypassing some of these layers of protection. Copyright infringement is by far the most common basis for such legal action, and sites like Library Genesis, The Pirate Bay, or Sci-Hub provide us with ideal case studies for the capabilities of these attacks.
-
-In essentially all cases the approach is either to apply legal pressure to the hosting provider to sever their agreement with the site, to attempt to seize control of the servers themselves (either through a good, old-fashioned raid or, in the case of cloud hosting, by going through the cloud provider), or to block the site at the ISP level, as the UK has unsuccessfully attempted to do with LibGen.
-
-What's interesting is this: The actual valuable data upon which Sci-Hub, TPB, and LibGen are built is in each case essentially an index. These sites are very large indices of content, and their value comes from being able to serve that content to you on-demand, perhaps tailored to a search query. What's interesting is that this concept is completely infrastructure-agnostic. If we could find a way of sharing an index without the centralized infrastructure of a web server (or a herd of web servers), we would render all these attacks irrelevant. A distributed data structure capable of filling the role of an API server combined with a locally stored web interface built to hook into that API would be able to provide equivalent functionality with none of a centralized server's weaknesses.
-
-Of course, this is not quite a new idea per se. It resembles Freenet's "Freesites", for instance.
-
-At the same time, though, it's not quite an old idea either. This is because it gets more viable with each passing year, as home computers grow in strength, connection bandwidth and IPv6 adoption both slowly crawl upwards, and research on distributed algorithms continues to yield improvements.
-
-Not only that, but I believe the political climate is shifting. Issues like copyright are being viewed perhaps more critically now than ever. Questions of censorship are no longer hypothetical. Net neutrality is being eliminated in less than a month in spite of overwhelming public support. The systemic problems of our information society are reaching a point where they can no longer be ignored. Distributed systems requiring a large network of volunteers rely on heavy adoption, which in turn relies on a level of moral clarity which may be easier to communicate now than it ever has been before.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
+layout: post
+title: The Promise of Decentralized Infrastructure
+date: '2018-04-20T23:55:00.000-08:00'
+author: Eli Sohl
+nobreak: True
+---
 
 
 Conceptually, most websites exist only as attractive front-ends for some underlying index of data. Sites whose indices include copyrighted data, like Sci-Hub and The Pirate Bay, often face legal threats. A primary aim of these threats is to disrupt the target website itself. These methods of disruption generally target either the hosting infrastructure, the host organization, or the servers themselves.
@@ -62,3 +28,9 @@ These, however, are _design_ challenges. As such, there's no reason why a proper
 The goal of the Theseus DHT, needless to say, is to provide such a system. The goal of the actual Theseus application will be to demonstrate the DHT's ability to host real, significant, performant applications, accessed by the user through a familiar (though locally hosted) web interface.
 
 The successful construction of such a system would serve as a powerful proof of concept for the idea that there can be more to the internet than just the web.
+
+This is not the first time these ideas have come around -- it's worth mentioning Gnutella, Freenet and its Freesites, as well as Mainline DHT, which is a successful and heavily used distributed hash table, though not a well-secured one. These are all systems whose successes are inspirational and whose failures can be learned from.
+
+Not only that, but home computers have higher specs than ever before, and they keep getting better. This makes it easier to put together a distributed system using peers' excess resources. Advances in practical cryptography are also constantly being made.
+
+I also believe that the social climate is shifting. Issues like copyright are being viewed perhaps more critically now than ever. Questions of censorship are no longer even close to hypothetical. Net neutrality is on schedule to be eliminated in less than a month in spite of overwhelming public support (though [the fight's not over yet](https://boingboing.net/2018/05/18/call-now-2.html)). The systemic problems of our information society are reaching a point where they can no longer be ignored. Distributed systems requiring large networks of volunteers rely on heavy adoption, which in turn depends on a level of moral clarity that may now be easier to convey than ever before.
