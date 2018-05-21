@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Potential of Decentralized Infrastructure
+title: The Potential of Distributed Infrastructure
 date: '2018-04-20'
 author: Eli Sohl
 nobreak: True
