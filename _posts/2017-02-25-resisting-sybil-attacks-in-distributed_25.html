@@ -4,13 +4,14 @@ title: Resisting Sybil Attacks in Distributed Hash Tables
 date: '2017-02-25T23:19:00.001-08:00'
 author: Eli Sohl
 tags: 
-modified_time: '2017-08-13T16:58:17.483-07:00'
+modified_time: '2018-09-08T18:03:17.483-07:00'
 thumbnail: https://2.bp.blogspot.com/-63xcH_dZtlU/WK59L7s9C3I/AAAAAAAAAms/V3F0zyNN79sbp0lct2AXxOa4iZqkM6axwCLcB/s72-c/bruteforce_trials_needed.png
 blogger_id: tag:blogger.com,1999:blog-4261047698100656327.post-2679920075959222761
 blogger_orig_url: http://sohliloquies.blogspot.com/2017/02/resisting-sybil-attacks-in-distributed_25.html
 ---
 
 <blockquote class="tr_bq">Previously:&nbsp;<a href="http://sohliloquies.blogspot.com/2017/02/theseus-robust-system-for-preserving.html"><i>Theseus: A Robust System for Preserving and Sharing Research</i></a></blockquote><br />
+<i>Note: While many of the ideas expressed in this blog post live on, many of the specifics are obsolete. In particular, the mathematical analysis given is flawed and overly simplistic. This post is left up for historical reasons but should not be treated as authoritative.</i>
 <h2>Introduction</h2><div>I'm in the process of designing Theseus's file signature tracking system. A few good options are available here; the one I'm currently leaning towards is a Kademlia-based distributed hash table where the table keys are public keys and table values are lists of signatures by the keyed keys.</div><div><br />
 </div><div>The main advantage of this approach is its simplicity. Simple is appealing. Another appealing factor is that our use case is very similar to the use case for BitTorrent's Mainline DHT (MLDHT), which was built to track lists of peers. This similarity means that if we model our approach to a degree on MLDHT then there is a wealth of directly applicable research for us to draw on.</div><div><br />
 </div><div>The main disadvantage of this approach is that MLDHT turns out to have some serious security problems at the design level. It inherits these from Kademlia, on which it was based. These problems undermine the DHT's ability to store data reliably. Similar issues exist for virtually all DHT constructions and seem to be a large part of why DHTs aren't more widely used. In general these flaws are intractable; however, in the specific case of MLDHT/Kademlia I think they can be overcome.</div><div><br />
