@@ -47,22 +47,30 @@ Let `e_i` denote the `i`th error term, so that the least-squares fit's total err
 The fit is optimal when `Sum_i (e_i)^2` is minimized, which happens when the partial derivative of that sum with respect to `n` is zero.
 
 $$
-E = \sum_{i=1}^n e_i^2
-$$
-
-$$
 \begin{align}
 E &= \sum_{i=1}^n e_i^2 \\
-  &= \sum_{i=1}^n (r_i - \frac{i}{n+1})^2 \\
-\frac{\partial E}{\partial n} &= todo
+&= \sum_{i=1}^n (r_i - \frac{i}{n+1})^2 \\
+\frac{\partial E}{\partial n} &= \sum_{i=1}^n 2 (r_i - \frac{i}{n+1}) \frac{i}{(n+1)^2} \\
+&= \frac{2}{(n+1)^2} \sum{i=1}^n (i r_i - \frac{i^2}{n+1})
 \end{align}
 $$
 
-`d/dn Sum_i (r_i - i / (n+1))^2 = ...` (TODO)
+Setting this equal to zero and solving for n:
 
-...
+$$
+\begin{align}
+\frac{2}{(n+1)^2} \sum{i=1}^n (i r_i - \frac{i^2}{n+1}) &= 0 \\
+\sum{i=1}^n (i r_i) - \frac{\sum{i=1}^n i^2}{n+1} &= 0 \\
+\sum{i=1}^n (i r_i) &= \frac{\sum{i=1}^n i^2}{n+1} \\
+n &= \frac{\sum{i=1}^n i^2}{\sum{i=1}^n i r_i}
+\end{align}
+$$
 
-Setting this equal to zero and solving for n, we end up with `n = k(k+1)(2k+1)/(6 Sum_i (i*r_i)) - 1`.
+
+
+
+
+ up with `n = k(k+1)(2k+1)/(6 Sum_i (i*r_i)) - 1`.
 
 In this way, the data from any address lookup can be used to generate an estimate of network size. (TODO: how are these estimates distributed?) 
 
