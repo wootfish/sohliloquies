@@ -38,11 +38,24 @@ Recall that in the continuous case, the expectations for these variables are `r_
 
 Any Kademlia lookup results in a list of the `k` closest nodes to a given address. This operation is better-studied and much more reliable (i.e. much more likely to produce a complete and correct list) than the neighborhood-walking operation mentioned above.
 
-Each of the addresses returned corresponds to a distance, and thus `k` estimates of network size may be derived. These estimates may be consolidated either through an average or a least-squares fit, the latter of which produces significantly more accurate results. Since the fit is univariate on `n`, a closed form expression for the least-squares fit may be obtained. The derivation is as follows:
+Each of the addresses returned corresponds to a distance, and thus `k` estimates of network size may be derived. These estimates may be consolidated either through an average or a least-squares fit, the latter of which produces significantly more accurate results.
+
+We're interested in getting a univariate fit on `n`, for which it turns out that a closed form expression exists. The derivation is as follows:
 
 Let `e_i` denote the `i`th error term, so that the least-squares fit's total error is `Sum_i (e_i)^2`. By definition, `e_i = r_i - i / (n+1)`.
 
 The fit is optimal when `Sum_i (e_i)^2` is minimized, which happens when the partial derivative of that sum with respect to `n` is zero.
+
+$$
+E = \sum_{i=1}^n e_i^2
+$$
+
+$$
+\begin{align}
+E &= \sum_{i=1}^n e_i^2 \\
+  &= \sum_{i=1}^n (r_i - \frac{i}{n+1})^2 \\
+\frac{\partial E}{\partial n} &= todo
+$$
 
 `d/dn Sum_i (r_i - i / (n+1))^2 = ...` (TODO)
 
