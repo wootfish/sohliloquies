@@ -55,6 +55,7 @@ $$
 E &= \sum_{i=1}^n e_i^2 \\
   &= \sum_{i=1}^n (r_i - \frac{i}{n+1})^2 \\
 \frac{\partial E}{\partial n} &= todo
+\end{align}
 $$
 
 `d/dn Sum_i (r_i - i / (n+1))^2 = ...` (TODO)
