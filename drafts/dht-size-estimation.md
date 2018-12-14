@@ -51,7 +51,7 @@ $$
 E &= \sum_{i=1}^n e_i^2 \\
 &= \sum_{i=1}^n (r_i - \frac{i}{n+1})^2 \\
 \frac{\partial E}{\partial n} &= \sum_{i=1}^n 2 (r_i - \frac{i}{n+1}) \frac{i}{(n+1)^2} \\
-&= \frac{2}{(n+1)^2} \sum{i=1}^n (i r_i - \frac{i^2}{n+1})
+&= \frac{2}{(n+1)^2} \sum_{i=1}^n (i r_i - \frac{i^2}{n+1})
 \end{align}
 $$
 
@@ -59,10 +59,10 @@ Setting this equal to zero and solving for n:
 
 $$
 \begin{align}
-\frac{2}{(n+1)^2} \sum{i=1}^n (i r_i - \frac{i^2}{n+1}) &= 0 \\
-\sum{i=1}^n (i r_i) - \frac{\sum{i=1}^n i^2}{n+1} &= 0 \\
-\sum{i=1}^n (i r_i) &= \frac{\sum{i=1}^n i^2}{n+1} \\
-n &= \frac{\sum{i=1}^n i^2}{\sum{i=1}^n i r_i}
+\frac{2}{(n+1)^2} \sum_{i=1}^n (i r_i - \frac{i^2}{n+1}) &= 0 \\
+\sum_{i=1}^n (i r_i) - \frac{\sum_{i=1}^n i^2}{n+1} &= 0 \\
+\sum_{i=1}^n (i r_i) &= \frac{\sum_{i=1}^n i^2}{n+1} \\
+n &= \frac{\sum_{i=1}^n i^2}{\sum_{i=1}^n i r_i}
 \end{align}
 $$
 
