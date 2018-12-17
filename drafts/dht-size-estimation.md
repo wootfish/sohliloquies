@@ -7,10 +7,6 @@ author: Eli Sohl
 
 
 <h5 id="noscript_notice">Note: This post uses MathJax to typeset equations. You will need to enable JavaScript (or read the source :) to see these.</h5>
-<script type="text/javascript">
-var element=document.getElementById("noscript_notice")
-element.parentNode.removeChild(element)
-</script>
 
 How do you figure out the size of a peer swarm without counting all the peers in it?
 
