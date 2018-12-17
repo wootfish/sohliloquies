@@ -26,7 +26,7 @@ Before going further, let's take a moment to review an important terminological 
 
 <h6>TODO: finish & write up analysis on peers vs nodes in routing query results</h6>
 
-If we assume even distribution of peers in a Kademlia-style, `xor`-based `L`-bit routing space, then since `xor` is bijective, the distances $$ d_1 $$ to $$ d_n $$ of each of the network's `n` nodes' addresses from any arbitrary target address `t` will be evenly distributed integers in the range $$$[0, 2^L)$$$.
+If we assume even distribution of peers in a Kademlia-style, `xor`-based `L`-bit routing space, then since `xor` is bijective, the distances $ d_1 $ to \( d_n \) of each of the network's `n` nodes' addresses from any arbitrary target address `t` will be evenly distributed integers in the range $[0, 2^L)$.
 
 A common series of college-level stats textbook problems is: first, find the expected value for the minimum of `n` real numbers uniformly sampled from `(0, 1)` (`1/(n+1)`); next, find a general formula for the expected value of the `i`th-least of these numbers (`i/(n+1)`); finally, find a general model for the distribution of the `i`th-least of these numbers (the beta distribution with shape parameters `k` and `n-i+1`). We only need the first two of these results here, although the third is useful in establishing confidence intervals for Sybil detection.
 
