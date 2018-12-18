@@ -57,7 +57,7 @@ Now set the derivative to zero and solve for n:
 $$
 \begin{align}
 \frac{2}{(n+1)^2} \sum_{i=1}^k (i r_i - \frac{i^2}{n+1}) &= 0 \\
-\sum_{i=1}^k i r_i &= \sum_{i=1}^k \frac{i^2}{n+1} \\
+\sum_{i=1}^k i r_i &= \frac{1}{n+1} \sum_{i=1}^k i^2 \\
 n &= \frac{\sum_{i=1}^k i^2}{\sum_{i=1}^k i r_i} - 1 \\
 &= \frac{k(k+1)(2k+1)}{6 \sum_{i=1}^k i r_i} - 1
 \end{align}
