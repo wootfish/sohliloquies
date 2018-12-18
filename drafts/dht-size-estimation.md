@@ -6,8 +6,8 @@ author: Eli Sohl
 ---
 
 
-<h5 id="noscript_notice">Note: This post uses MathJax to typeset equations. You will need to enable JavaScript (or read the source :) to see these.</h5>
-<script type="text/javascript" src="/assets/js/noscriptnoticer.js"></script>
+<h5 id="noscript_notice">Note: This post uses MathJax to typeset equations. You will need to enable JavaScript for these to render properly.</h5>
+<script src="/sohliloquies/assets/js/noscriptnoticer.js"></script>
 
 How do you figure out the size of a peer swarm without counting all the peers in it?
 
