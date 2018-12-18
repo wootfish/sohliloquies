@@ -41,7 +41,7 @@ For least-squares, all we're looking for is a univariate fit on $n$. A closed-fo
 
 Let $e_i$ denote the $i$th error term. Then $e_i = r_i - \frac{i}{n+1}$, and the total error is $\sum_{i=1}^k {e_i}^2$.
 
-The fit is optimal when $\sum_{i=1}^k (e_i)^2$ is minimized, which happens when the partial derivative of that sum with respect to $n$ is zero.
+The fit is optimal when total error is minimized, which happens when the partial derivative of that sum with respect to $n$ is zero.
 
 $$
 \begin{align}
@@ -63,12 +63,12 @@ n &= \frac{\sum_{i=1}^k i^2}{\sum_{i=1}^k i r_i} - 1 \\
 \end{align}
 $$
 
-This gives the value of n for which the squared errors on each distance in the lookup are collectively minimized.
+This gives the value of $n$ for which the squared errors on each distance in the lookup are collectively minimized.
 
 In this way, the information from any address lookup can be used to generate a quick estimate of network size.
 
 <h6>TODO: how are these estimates distributed?</h6>
 
-The variance on these estimates is non-negligible, although it does decrease as `k` increases. Better results may also be achieved by running a number of lookups in parallel and taking the median of their resulting size estimates.
+The variance on these estimates is non-negligible, although it does decrease as $k$ increases. Better results may also be achieved by running a number of lookups in parallel and taking the median of their resulting size estimates.
 
 <h6>TODO: experimental validation indicated that this has a consistent bias. Need to revisit this research, add documentation of this trend, discuss possible causes, and look into the possibility of deriving some sort of correction factor</h6>
