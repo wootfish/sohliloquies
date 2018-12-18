@@ -41,7 +41,7 @@ For least-squares, all we're looking for is a univariate fit on $n$. A closed-fo
 
 Let $e_i$ denote the $i$th error term. Then $e_i = r_i - \frac{i}{n+1}$, and the total error is $\sum_{i=1}^k {e_i}^2$.
 
-The fit is optimal when $sum_{i=1}^k (e_i)^2$ is minimized, which happens when the partial derivative of that sum with respect to $n$ is zero.
+The fit is optimal when $\sum_{i=1}^k (e_i)^2$ is minimized, which happens when the partial derivative of that sum with respect to $n$ is zero.
 
 $$
 \begin{align}
