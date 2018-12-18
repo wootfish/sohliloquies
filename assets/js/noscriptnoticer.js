@@ -3,4 +3,3 @@
 
 var element=document.getElementById("noscript_notice")
 element.parentNode.removeChild(element)
-alert("i'm not being blocked!")
