@@ -5,12 +5,11 @@ author: Eli Sohl
 ---
 
 
-Visionary novels like _Snow Crash_, _Neuromancer_, and others shaped for us the idea of _cyberspace_: a collective, nonphysical-yet-real common space, a set of shared experiences mediated by networked hardware. When two people have a phone call, "[the place between the phones](https://www.gutenberg.org/files/101/101-h/101-h.htm#introduction)" is located in cyberspace. Through the 80s and 90s, the idea of cyberspace was popular as a way of explaining what systems like the internet were bringing into existence. 
+Visionary novels like _Snow Crash_, _Neuromancer_, and others shaped for us the idea of _cyberspace_: a collective, nonphysical-yet-real common space, a set of shared experiences mediated by networked hardware. When two people have a phone call, "[the place between the phones](https://www.gutenberg.org/files/101/101-h/101-h.htm#introduction)" is located in cyberspace. Through the 80s and 90s, the idea of cyberspace was popular as a way of explaining what systems like the internet were bringing into existence.
 
+ngram trends chart: <iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=cyberspace&year_start=1970&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Ccyberspace%3B%2Cc0" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
 
-<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=cyberspace&year_start=1970&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Ccyberspace%3B%2Cc0" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
-
-Somehow, as the internet itself has grown more than perhaps anyone expected, this concept of cyberspace seems somehow to be ceasing to strike people as a useful metaphor. Why?
+Somehow, as the <b>internet</b> itself <div>has</div> grown more than perhaps anyone expected, this concept of cyberspace seems somehow to be ceasing to strike people as a useful metaphor. Why?
 
 The metaphor certainly is an apt one, as much now as ever, but in its aptness it highlights certain things we would perhaps prefer to forget: ways in which the state of the internet is much worse than the idealists of the early days would have wished.
 
