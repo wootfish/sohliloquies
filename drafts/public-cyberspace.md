@@ -5,6 +5,7 @@ author: Eli Sohl
 ---
 
 
+<!---
 Visionary novels like _Snow Crash_, _Neuromancer_, and others shaped for us the idea of _cyberspace_: a collective, nonphysical-yet-real common space, a set of shared experiences mediated by networked hardware. When two people have a phone call, "[the place between the phones](https://www.gutenberg.org/files/101/101-h/101-h.htm#introduction)" is located in cyberspace. Through the 80s and 90s, the idea of cyberspace was popular as a way of explaining what systems like the internet were bringing into existence.
 
 <iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=cyberspace&year_start=1970&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Ccyberspace%3B%2Cc0" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
@@ -23,13 +24,15 @@ Yet, as the modern Internet has taken shape this metaphor of cyberspace, once in
 
 (As an aside, the literarily-inclined might also note that the start of the brief period where 'cyberspace' overtook 'internet' in popularity lines up quite well with the publication of _Snow Crash_ in mid-'92.)
 
+--->
+
 As a metaphor, _cyberspace_ was potent in part because it captured the sheer breadth of possibilities that exist with networked technology. By suggesting an analogue to physical space, which (of course) has supported literally the entire range of human experience, the term seemed to suggest a limitless domain of new experiences, possibilities, potentialities. It's a cool thought. Fast-forward to 2018, and we've fallen a bit short of expectations: many people's experience of the internet consists of four web sites, each of which is largely comprised of screenshots from the other three.
 
 OK, maybe that's a bit much. But grant me that bit of hyperbole and in return I'll let you in on a secret: cyberspace hasn't gone away. We've just been spending all our time building really awful spaces.
 
 Architecturally, the modern web is built around a client-server model: data requesters (like you, loading up Twitter) and data providers (like Twitter, showing you fresh tweets). The data lives on the server; the server lives in some large air-conditioned room with armed guards; this server doles out data to clients like yourself at-will. What sort of cyberspatial construct is this? What sort of space is created between you and the service? Does the service's owner have power over you? Certainly they do -- though most major companies go to great pains to obfuscate this fact.
 
-Early on in _The Hacker Crackdown_ , while chronicling the development of the phone network, Bruce Sterling recounts how telephone technology was first normalized: 
+Early on in _The Hacker Crackdown_ , while chronicling the development of the phone network, Bruce Sterling recounts how telephone technology was first normalized:
 
 > After a year or so, Alexander Graham Bell and his capitalist backers concluded that eerie music piped from nineteenth-century cyberspace was not the real selling- point of his invention. Instead, the telephone was about speech -- individual, personal speech, the human voice, human conversation and human interaction. The telephone was not to be managed from any centralized broadcast center. It was to be a personal, intimate technology.
 >
