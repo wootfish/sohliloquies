@@ -5,7 +5,7 @@ author: Eli Sohl
 ---
 
 
-<!---
+{% comment %}
 Visionary novels like _Snow Crash_, _Neuromancer_, and others shaped for us the idea of _cyberspace_: a collective, nonphysical-yet-real common space, a set of shared experiences mediated by networked hardware. When two people have a phone call, "[the place between the phones](https://www.gutenberg.org/files/101/101-h/101-h.htm#introduction)" is located in cyberspace. Through the 80s and 90s, the idea of cyberspace was popular as a way of explaining what systems like the internet were bringing into existence.
 
 <iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=cyberspace&year_start=1970&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Ccyberspace%3B%2Cc0" width=900 height=500 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
@@ -23,8 +23,7 @@ Yet, as the modern Internet has taken shape this metaphor of cyberspace, once in
 ...and, in a breaking of perhaps not the seventh seal but certainly no less than the fourth, the shortened term _cyber_ seems to be on the rise as a replacement (quite a surreal trend for those of us who remember what that word _used_ to mean -- but enough about that). At risk of stating the obvious, _cyber_'s edge over _cyberspace_ is its excision of the concept's spatial element: _cyberspace_ suggests a place, whereas no one seems quite able to agree on what _cyber_ suggests. The term seems to function more as a tabula rasa, onto which anyone may project their pre-existing ideas of what the internet is. Practical, but not particularly instructive.
 
 (As an aside, the literarily-inclined might also note that the start of the brief period where 'cyberspace' overtook 'internet' in popularity lines up quite well with the publication of _Snow Crash_ in mid-'92.)
-
---->
+{% endcomment %}
 
 As a metaphor, _cyberspace_ was potent in part because it captured the sheer breadth of possibilities that exist with networked technology. By suggesting an analogue to physical space, which (of course) has supported literally the entire range of human experience, the term seemed to suggest a limitless domain of new experiences, possibilities, potentialities. It's a cool thought. Fast-forward to 2018, and we've fallen a bit short of expectations: many people's experience of the internet consists of four web sites, each of which is largely comprised of screenshots from the other three.
 
