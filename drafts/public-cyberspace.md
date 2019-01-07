@@ -25,18 +25,18 @@ Yet, as the modern Internet has taken shape this metaphor of cyberspace, once in
 (As an aside, the literarily-inclined might also note that the start of the brief period where 'cyberspace' overtook 'internet' in popularity lines up quite well with the publication of _Snow Crash_ in mid-'92.)
 {% endcomment %}
 
-> Cyberspace. A consensual hallucination experienced daily by billions of legitimate operators, in every nation, by children being taught mathematical concepts... A graphical representation of data abstracted from the banks of every computer in the human system. Unthinkable complexity. Lines of light ranged in the non-space of the mind, clusters and constellations of data. Like city lights, receding.
+> Governments of the Industrial World, you weary giants of flesh and steel, I come from Cyberspace, the new home of Mind. On behalf of the future, I ask you of the past to leave us alone. You are not welcome among us. You have no sovereignty where we gather.
 
-_Neuromancer_
+\-[_A Declaration of the Independence of Cyberspace_](https://www.eff.org/cyberspace-independence)
 
 > Cyberspace is the "place" where a telephone conversation appears to occur. Not inside your actual phone, the plastic device on your desk. Not inside the other person's phone, in some other city. The place between the phones. The indefinite place out there, where the two of you, two human beings, actually meet and communicate.
 > Although it is not exactly "real," "cyberspace" is a genuine place. Things happen there that have very genuine consequences. This "place" is not "real," but it is serious, it is earnest. Tens of thousands of people have dedicated their lives to it, to the public service of public communication by wire and electronics.
 
-_The Hacker Crackdown_
+\-[_The Hacker Crackdown_](http://www.mit.edu/hacker/hacker.html)
 
-> Governments of the Industrial World, you weary giants of flesh and steel, I come from Cyberspace, the new home of Mind. On behalf of the future, I ask you of the past to leave us alone. You are not welcome among us. You have no sovereignty where we gather.
+> Cyberspace. A consensual hallucination experienced daily by billions of legitimate operators, in every nation, by children being taught mathematical concepts... A graphical representation of data abstracted from the banks of every computer in the human system. Unthinkable complexity. Lines of light ranged in the non-space of the mind, clusters and constellations of data. Like city lights, receding.
 
-_A Declaration of the Independence of Cyberspace_
+\-[_Neuromancer_](https://archive.org/stream/NeuromancerWilliamGibson/Neuromancer%20-%20William%20Gibson_djvu.txt)
 
 As a metaphor, _cyberspace_ was potent in part because it captured the sheer breadth of possibilities that exist with networked technology. By suggesting an analogue to physical space, which (of course) has supported literally the entire range of human experience, the term seemed to suggest a limitless domain of new experiences, possibilities, potentialities. It's a cool thought. Fast-forward to 2018, and we've fallen a bit short of expectations: many people's experience of the internet consists of four web sites, each of which is largely comprised of screenshots from the other three.
 
