@@ -26,7 +26,7 @@ As a metaphor, _cyberspace_ was popular because it captured the sheer breadth of
 
 OK, maybe that's a bit much. But grant me that bit of hyperbole and in return I'll let you in on a secret: cyberspace hasn't gone away. We're still in it, we've just been spending all our time in the wrong parts of it.
 
-More specifically: we're spending our time in (cyber-)spaces that are privately owned. They're private property, controlled and run by large companies who generally stay in business by treating their userbase as a product. Their business model is to try to take advantage of you as much as they can without you noticing. So much of the modern internet is built around creating these private-property spaces, and the downsides of this model have come to be seen largely as downsides of the internet itself. This is an easy mindset to fall into, but a mistaken one as well: the issues of private ownership can be avoided by building _public_ spaces on the internet -- shared experiences mediated by systems with shared ownership. Networks of volunteers coming together to create entire new categories of common goods. Public cyberspace.
+More specifically: we're spending our time in (cyber-)spaces that are privately owned. They're private property, controlled and run by large companies who generally stay in business by treating their userbase as a product. Their business model is fundamentally abusive: their goal is to try and take advantage of you as much as they can without you leaving (or, ideally, even noticing). So much of the modern internet consists of these private-property spaces that their downsides have come to be seen largely as downsides of the internet itself. This is an easy mindset to fall into, but it is nonetheless mistaken. The issues of private ownership can be avoided by building _public_ spaces on the internet -- shared experiences mediated by systems with shared ownership. Networks of volunteers coming together to create entire new categories of common goods. Public cyberspace.
 
 Maybe that sounds nice, but what does it actually mean? To answer that question, we'll have to go into a little more detail.
 
@@ -64,7 +64,7 @@ All this is repulsive beyond words. It is a fundamental breach of human trust, c
 
 [^5]: Or, in Facebook's case, [selling them to just about anyone who bothers to put in a bid](https://www.theguardian.com/technology/2018/dec/19/facebook-shared-user-data-private-messages-netflix-spotify-amazon-microsoft-sony).
 
-One response to this unintended consequence of centralized systems has been to try to decentralize by building new, _federated_ systems for social media.
+One response to this unintended consequence of centralized systems has been to try to decentralize by building new, _federated_ systems for web sites (with special focus on social media sites, since in this day and age social media is where most of us spend most of our time online, as well as where some of the most openly user-hostile companies are).
 
 The idea is this: instead of having a service provided by a big, monolithic server (or set of servers) owned and operated by one company, you have a number of smaller, volunteer-run servers which collaborate to provide a similar experience to centralized web sites. Distributing responsibility in this way also distributes ownership (somewhat!), limiting the amount of data that can be collected on users.[^6]
 
