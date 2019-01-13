@@ -98,7 +98,7 @@ Of course, BitTorrent is a pretty limited application. It does one thing, and do
 
 Returning for a moment to the example of BitTorrent: I mentioned earlier that one sticking point with BitTorrent is getting an introduction to a peer swarm. This turns out to be a challenge shared by almost all peer-to-peer systems: Once you've met some peers, you're set, but getting to that point can be tricky. How is it done today?
 
-The "traditional" way to get started is via a _peer tracker_, a centralized service that peers can register themselves with and which in turn serves up a list of registered peers on demand. Not only is this a central point of surveillance, it is a central point of failure (as the Pirate Bay folks and many before them have learned the hard way).
+The "traditional" way to get started is via a _peer tracker_, a centralized service that peers can register themselves with and which in turn serves up a list of registered peers on demand. Not only is this a central point of surveillance, it is a central point of failure.
 
 A step beyond running a peer tracker is to offer _mirrors_, which are essentially a federation of the tracker service. In this strategy, a bunch of folks grab the same content index and start serving up their own trackers from it, essentially forcing copyright regulators and their ilk to play whack-a-mole to try to take everyone down. This is rarely a permanent solution, but at the very least it can buy some time.
 
