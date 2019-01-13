@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Happened to Cyberspace?
+title: Reclaiming Cyberspace
 author: Eli Sohl
 ---
 
