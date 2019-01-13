@@ -28,7 +28,7 @@ Previous attempts at building such spaces (albeit under different names) have en
 
 [^2]: Some of which has been carried out by myself through the Theseus project, which you'll hear more about later.
 
-Maybe that sounds nice, but what does it actually mean? To answer that question, we'll have to go into a little more detail.
+Maybe this all sounds nice, but what does it actually mean? To answer that question, we'll have to go into a little more detail.
 
 Architecturally, the modern web is built around a client-server model: data requesters (like you, loading up Twitter) and data providers (like Twitter, sending you fresh tweets). This data lives on servers; the servers live in some large air-conditioned room with armed guards; these servers dole out data to clients like yourself at-will.
 
