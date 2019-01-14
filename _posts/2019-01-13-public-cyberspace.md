@@ -16,8 +16,6 @@ author: Eli Sohl
 
 At first, no one really knew what the internet was for. We knew what it _was_, and people were coming up with all sorts of uses for it -- bulletin boards, instant messaging, mailing lists -- but there was this general sense that the internet's potential went far beyond any of that. Bigger things were coming; it's just that no one quite knew what they would look like. To capture this sense of excited uncertainty, sci-fi authors of the '80s and '90s leaned heavily on the idea of _cyberspace_.[^1]
 
-[^1]: Style note: Throughout this post, _"cyberspace"_ refers to the word _cyberspace_ when italicized, and to the concept of cyberspace otherwise.
-
 As a metaphor, _cyberspace_ was popular because it captured the sheer breadth of possibilities that exist with networked technology. By suggesting an analogue to physical space, which has been the venue for the entire range of analog human experience, _cyberspace_ seemed to suggest a limitless new domain: new experiences, new possibilities, new potentialities. It's an exciting thought. Fast-forward to 2019, and we've fallen a bit short of expectations. Many people's experience of the modern internet consists of four social media sites, each of which is largely comprised of screenshots from the other three.
 
 OK, maybe that's a bit much. But grant me that bit of hyperbole and in return I'll let you in on a secret: cyberspace hasn't gone away. We're still in it, we've just been spending all our time in the wrong parts of it.
@@ -26,9 +24,11 @@ More specifically: we're spending our time in (cyber-)spaces that are privately 
 
 Previous attempts at building such spaces (albeit under different names) have encountered seemingly insurmountable challenges. However, recent research[^2] has offered new hope for overcoming these. If successful, the benefits of the resulting public cyberspace over our current systems would be significant. Let me explain.
 
-[^2]: Some of which has been carried out by myself through the Theseus project, which you'll hear more about later.
-
 <!--break-->
+
+[^1]: Style note: Throughout this post, _"cyberspace"_ refers to the word _cyberspace_ when italicized, and to the concept of cyberspace otherwise.
+
+[^2]: Some of which has been carried out by myself through the Theseus project, which you'll hear more about later.
 
 Architecturally, the modern web is built around a client-server model: data requesters (like you, loading up Twitter) and data providers (like Twitter, sending you fresh tweets). This data lives on servers; the servers live in some large air-conditioned room with armed guards; these servers dole out data to clients like yourself at-will.
 
