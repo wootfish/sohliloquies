@@ -24,11 +24,9 @@ OK, maybe that's a bit much. But grant me that bit of hyperbole and in return I'
 
 More specifically: we're spending our time in (cyber-)spaces that are privately owned. They're private property, controlled and run by large companies who generally stay in business by treating their userbase as a product. Their business model is fundamentally abusive: their goal is to try and take advantage of you as much as they can without you leaving (or, ideally, even noticing). So much of the modern internet consists of these spaces that their downsides have come to be seen largely as downsides of the internet itself. This is an easy mindset to fall into, but it is nonetheless mistaken. The issues of private ownership can be avoided by building _public_ spaces on the internet -- shared experiences mediated by systems with shared ownership. Networks of volunteers coming together to create entire new categories of common goods. Public cyberspace.
 
-Previous attempts at building such spaces (albeit under different names) have encountered seemingly insurmountable challenges. However, recent research[^2] has offered new hope for overcoming these, and the future is looking very promising indeed.
+Previous attempts at building such spaces (albeit under different names) have encountered seemingly insurmountable challenges. However, recent research[^2] has offered new hope for overcoming these. If successful, the benefits of the resulting public cyberspace over our current systems would be significant. Let me explain.
 
 [^2]: Some of which has been carried out by myself through the Theseus project, which you'll hear more about later.
-
-Maybe this all sounds nice, but what does it actually mean? To answer that question, we'll have to go into a little more detail.
 
 Architecturally, the modern web is built around a client-server model: data requesters (like you, loading up Twitter) and data providers (like Twitter, sending you fresh tweets). This data lives on servers; the servers live in some large air-conditioned room with armed guards; these servers dole out data to clients like yourself at-will.
 
@@ -48,7 +46,7 @@ Modern social media sites have learned this lesson well: while the _individual i
 
 Now, there are some big advantages to building web sites with this centralized, business-run, private-property model. We've spent few decades doing things this way, and by now we've gotten pretty good at it. There are lots of centralized web sites that we don't yet know how to build any other way.
 
-That said, there are also significant drawbacks to this model. Servers aren't cheap. Most web sites have needed to make money to stay online, which turns out to be pretty difficult. Hence the advent of online advertising, which has since been described (by people who would know) as [the original sin](https://www.theatlantic.com/technology/archive/2014/08/advertising-is-the-internets-original-sin/376041/) of the internet.
+That said, there are also significant drawbacks to this model. Servers aren't cheap. Most web sites have needed to make money to stay online, which turns out to be pretty difficult. Hence the advent of online advertising, which has since been described (by people who would know) as [the original sin of the internet](https://www.theatlantic.com/technology/archive/2014/08/advertising-is-the-internets-original-sin/376041/).
 
 Decades down the road, we've discovered that [the digital ad ecosystem is just as bad as any other funding model we've tried](http://nymag.com/intelligencer/2018/12/how-much-of-the-internet-is-fake.html) -- it just has a less obvious failure state. However, the lifeblood of this ecosystem -- tracking data, the more personal the better -- has turned out to be tremendously valuable to a lot of companies for a lot of reasons.[^4]
 
