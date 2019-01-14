@@ -28,6 +28,8 @@ Previous attempts at building such spaces (albeit under different names) have en
 
 [^2]: Some of which has been carried out by myself through the Theseus project, which you'll hear more about later.
 
+<!--break-->
+
 Architecturally, the modern web is built around a client-server model: data requesters (like you, loading up Twitter) and data providers (like Twitter, sending you fresh tweets). This data lives on servers; the servers live in some large air-conditioned room with armed guards; these servers dole out data to clients like yourself at-will.
 
 What sort of cyberspace have we architected here? Who, if anyone, owns it? Does the service's owner have power over you? Certainly they do, and certainly they own the space -- though most major companies go to great pains to hide this fact.
