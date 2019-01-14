@@ -141,3 +141,5 @@ As for more ambitious ideas: how about automatic mirroring for sensitive data (e
 Theseus DHT is also a natural fit for making introductions to peer swarms. The fact that Theseus DHT is designed for resilience against Sybil attacks makes it preferable over MLDHT for this purpose, as does the fact that it uses strong, carefully-engineered encryption to help protect peers' privacy even under pervasive surveillance.
 
 What this means is that a system like Theseus DHT would be not only a powerful construct in its own right but also an ideal bootstrapping point for the next generation of peer-to-peer apps -- a layer on which they can build, a substrate, a common good commonly used and maintained, with common benefit. Of course, all this depends on developers recognizing the potential that exists here and deciding to help develop this corner of cyberspace. That's why I'm not necessarily saying this _is_ the future. What I'm saying is: We should be so lucky as for this to be the future.
+
+<hr>
