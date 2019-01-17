@@ -15,7 +15,9 @@ In a big swarm with lots of peers, counting them all would take a long time (and
 
 A better idea: Try to model the distribution of peers in the whole network. Then, measure their distribution in a part of the network, and extrapolate based on your measurements.
 
-Let's make things more concrete by setting some assumptions, namely that we're working with a peer swarm using Kademlia-style $xor$ routing, as described [here](http://www.scs.stanford.edu/~dm/home/papers/kpos.pdf) (PDF link). The most common strategy in this style of network has been to try to walk a certain $n$-bit subspace of the $L$-bit address space, then to multiply the number of nodes found by $2^{L-n}$ to get an estimate for the full network. This strategy may sound too simple to fail, but fail it does: [in 2013 this method was shown to result in significant underestimates of network size](https://www.cs.helsinki.fi/u/lxwang/publications/P2P2013_13.pdf) (PDF link). The reason is that since every node has imperfect routing info, any walk is statistically likely to miss some of the nodes in a region. This turns out to be a hard flaw to address; the best the cited paper has to offer is a somewhat involved technique for determining a "correction factor" to try and adjust for the error factor.
+Let's make things more concrete by setting some assumptions, namely that we're working with a peer swarm using Kademlia-style $xor$ routing, as described [here](http://www.scs.stanford.edu/~dm/home/papers/kpos.pdf) (PDF link). The most common strategy in this style of network has been to try to walk a certain $n$-bit subspace of the $L$-bit address space, then to multiply the number of nodes found by $2^{L-n}$ to get an estimate for the full network.
+
+This strategy may sound too simple to fail, but fail it does: [in 2013 this method was shown to result in significant underestimates of network size](https://www.cs.helsinki.fi/u/lxwang/publications/P2P2013_13.pdf) (PDF link). The reason is that since every node has imperfect routing info, any walk is statistically likely to miss some of the nodes in a region. This turns out to be a hard flaw to address; the best the cited paper has to offer is a somewhat involved technique for determining a "correction factor" to try and adjust for the error factor.
 
 Walking address ranges is not what Kademlia's routing function is designed for; it is designed for looking up specific addresses, which it turns out to be significantly better at doing. Much more is known about writing [optimal algorithms for address lookups](https://gnunet.org/sites/default/files/SKademlia2007.pdf) (PDF link), as well. So how about trying to extrapolate a size estimate from address lookup results?
 
@@ -27,7 +29,7 @@ These random variables $r_i$ are discrete, and their distribution is algebraical
 
 The expected value the $i$th-least of $n$ reals sampled evenly from $(0, 1)$ is $\frac{i}{n+1}$. Thus, $\mathbf{E}(r_i) \approx \frac{i}{n+1}$.
 
-We can turn this equation around: $n \approx \frac{i}{\mathbf{E}(r_i)} - 1$.
+We can turn this equation around: $n \approx \frac{i}{\mathbf{E}(r_i)} - 1$. This allows us to convert any measured value of \mathbf{E}[r_i] to a rough network size estimate. The better our measured expected value, the better the resulting estimate.
 
 
 
