@@ -29,7 +29,7 @@ These random variables $r_i$ are discrete, and their distribution is algebraical
 
 The expected value the $i$th-least of $n$ reals sampled evenly from $(0, 1)$ is $\frac{i}{n+1}$. Thus, $\mathbf{E}(r_i) \approx \frac{i}{n+1}$.
 
-We can turn this equation around: $n \approx \frac{i}{\mathbf{E}(r_i)} - 1$. This allows us to convert any measured value of \mathbf{E}[r_i] to a rough network size estimate. The better our measured expected value, the better the resulting estimate.
+We can turn this equation around: $n \approx \frac{i}{\mathbf{E}(r_i)} - 1$. This allows us to convert any measured value of $\mathbf{E}[r_i]$ to a rough network size estimate. The better our measured expected value, the better the resulting estimate.
 
 
 
