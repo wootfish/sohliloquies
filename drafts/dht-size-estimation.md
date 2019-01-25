@@ -27,7 +27,7 @@ If we assume even distribution of nodes in a Kademlia-style, $xor$-based $L$-bit
 
 As is common for order statistics of discrete variables, these variables $r_i$ have extremely unwieldy algebraic representations. However, they may be closely approximated by continuous variables with much cleaner algebraic representations.
 
-The expected value the $i$th-least of $n$ reals sampled evenly from $(0, 1)$ is $\frac{i}{n+1}$. So, $\mathbf{E}[r_i] \approx \frac{i}{n+1}$.
+The expected value the $i$th-least of $n$ reals sampled evenly from $(0, 1)$ is $\frac{i}{n+1}$. Our approximation, then, will be $\mathbf{E}[r_i] \approx \frac{i}{n+1}$.
 
 We can turn this equation around: $\frac{i}{\mathbf{E}[r_i]} - 1 \approx n$. This allows us to convert any measured value of $\mathbf{E}[r_i]$ to a rough network size estimate. The better our measurement, the better the resulting estimation. To get measurements for $\mathbf{E}[r_1], \ldots, \mathbf{E}[r_k]$, all we have to do is run some lookups and take arithmetic averages of all measured values for $r_1$, $r_2$, etc.
 
