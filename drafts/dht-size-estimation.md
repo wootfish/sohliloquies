@@ -29,7 +29,7 @@ As is common for order statistics of discrete variables, these variables $r_i$ h
 
 The expected value the $i$th-least of $n$ reals sampled evenly from $(0, 1)$ is $\frac{i}{n+1}$. So, $\mathbf{E}[r_i] \approx \frac{i}{n+1}$.
 
-We can turn this equation around: $\frac{i}{\mathbf{E}[r_i]} - 1 \approx n$. This allows us to convert any measured value of $\mathbf{E}[r_i]$ to a rough network size estimate. The better our measurement, the better the resulting estimation. To get measurements for $\mathbf{E}[r_1], \ldots, \mathbf{E}[r_k]$, all we have to do is run some lookups and take arithmetic averages of all measured values for $r_1$s, $r_2$s, etc.
+We can turn this equation around: $\frac{i}{\mathbf{E}[r_i]} - 1 \approx n$. This allows us to convert any measured value of $\mathbf{E}[r_i]$ to a rough network size estimate. The better our measurement, the better the resulting estimation. To get measurements for $\mathbf{E}[r_1], \ldots, \mathbf{E}[r_k]$, all we have to do is run some lookups and take arithmetic averages of all measured values for $r_1$, $r_2$, etc.
 
 Each variable $r_i$ yields its own independent size estimate. These can be consolidated in any number of ways. The most obvious is to perform an arithmetic average across all estimates. This works, but a better method is to compute a least-squares fit for the value of $n$ minimizing the squared error on each estimate $\frac{i}{\mathbf{E}[r_i]} - 1$. The closed form for this fit is straightforward to derive.
 
