@@ -65,4 +65,4 @@ Shown are the results of size estimates in networks of various sizes, and with v
 
 Estimates obtained by least-squares fit are shown in green; the results of using an arithmetic mean are shown in red. Both are fairly accurate, but the least-squares fit can be seen to have a tighter distribution across the board. Outliers are common for arithmetic mean-based single-query estimates, but these fall off quickly as the number of queries increases.
 
-![Fit results](/img/dht-size-estimation-charts.png)
+![Fit results](/sohliloquies/img/dht-size-estimation-charts.png)
