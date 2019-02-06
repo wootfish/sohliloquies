@@ -61,9 +61,9 @@ This gives the value of $n$ for which the squared errors on each estimate are co
 
 I'll close this out with some cool charts. These are the results of some empirical tests I ran to validate this methodology. The charts are formatted as histograms of size estimates, with estimated size on the x-axis and probability density on the y-axis. Size estimates obtained by least-squares fit are shown in green; the results of using an arithmetic mean are shown in red. Both are fairly accurate, but the least-squares fit can be seen to have a somewhat tighter distribution across the board. It also produces significantly fewer outliers.
 
-From left-to-right, we see how estimates vary as the number of queries used to generate each estimate increases. The more queries used, the larger our sample size for measuring each $\mathbf{E}[r_i]$ is, and the lower the variance is on the resulting estimate. Check out how much the charts' ranges decrease from left to right.
+From left to right, we see how estimates vary as the number of queries used to generate each estimate increases. The more queries used, the larger our sample size for measuring each $\mathbf{E}[r_i]$ is, and the lower the variance is on the resulting estimate. Check out how much the charts' ranges decrease from left to right.
 
-From top-to-bottom, we see what happens as the size of the network increases. Interestingly, in each column, the ratio of variance to network size seems roughly constant.
+From top to bottom, we see what happens as the size of the network increases. Interestingly, in each column, the ratio of variance to network size seems roughly constant.
 
 The top-right corner can also be seen to be exhibiting some really bizarre behavior. I really have no idea what's going on there, but I'm sure there's an interesting reason for it!
 
