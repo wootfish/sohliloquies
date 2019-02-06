@@ -67,4 +67,4 @@ From top-to-bottom, we see what happens as the size of the network increases. In
 
 The top-right corner can also be seen to be exhibiting some really bizarre behavior. I really have no idea what's going on there, but I'm sure there's an interesting reason for it!
 
-![Fit results](/sohliloquies/img/dht-size-estimation-charts.png)
+[![Fit results](/sohliloquies/img/dht-size-estimation-charts.png)](/sohliloquies/img/dht-size-estimation-charts.png)
